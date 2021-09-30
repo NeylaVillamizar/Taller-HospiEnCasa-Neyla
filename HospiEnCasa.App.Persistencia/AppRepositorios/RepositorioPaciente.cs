@@ -1,7 +1,7 @@
 namespace HospiEnCasa.App.Persistencia
 {
-    public class RepositorioPaciente:IRepositorioPaciente
+    public class RepositorioPaciente : IRepositorioPaciente
     {
-        
+
     }
 }
