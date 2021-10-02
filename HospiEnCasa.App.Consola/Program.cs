@@ -6,9 +6,27 @@ namespace HospiEnCasa.App.Consola
 {
     class Program
     {
+        private static IRepositorioPaciente _repoPaciente= new RepositorioPaciente(new Persistencia.AppContext());
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Hello World EF!");
+            AddPaciente();
+        }
+
+        private static void AddPaciente()
+        {
+            var paciente = new Paciente{
+                Nombre = "Nicolay",
+                Apellidos = "Perez",
+                NumeroTelefono = "33366555",
+                Genero = Genero.Masculino,
+                Direccion = "Calle 4 No 7-4",
+                Longitud = 5.07062F,
+                Latitud = -75.52290F,
+                Ciudad = "Manizales",
+                FechaNacimiento = new DateTime(1990, 04, 12)
+            };
+            _repoPaciente.AddPaciente(paciente);
         }
     }
 }
